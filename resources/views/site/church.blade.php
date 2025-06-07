@@ -1,7 +1,9 @@
 @php
     $media = $item->medias('cover')->first();
-    $imageUrl = $item->image('cover');
     $imageAlt = $media?->alt_text ?? $item->title;
+
+    $desktopUrl = $item->image('cover');
+    $mobileUrl = $item->image('cover', 'mobile');
 @endphp
 
 <!doctype html>
@@ -14,14 +16,19 @@
 <x-menu/>
 <div class="mx-auto max-2xl prose">
     <h1>{{ $item->title }}</h1>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div class="flex flex-col">
             <div>{{ $item->location }}</div>
             <div><a href="mailto:{{ $item->email }}">{{ $item->email }}</a></div>
             <div><a href="{{ $item->url }}">Website</a></div>
         </div>
-        @if ($imageUrl)
-            <img src="{{ $imageUrl }}" alt="{{ $imageAlt }}" />
+        @if ($media)
+            <picture>
+                <source srcset="{{ $mobileUrl }}" media="(max-width: 639px)">
+                <source srcset="{{ $desktopUrl }}" media="(min-width: 640px) and (max-width: 1023px)">
+                <source srcset="{{ $desktopUrl }}" media="(min-width: 1024px)">
+                <img src="{{ $desktopUrl }}" alt="{{ $imageAlt }}" style="width:100%; height:auto;">
+            </picture>
         @endif
     </div>
 

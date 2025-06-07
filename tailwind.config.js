@@ -9,6 +9,13 @@ export default {
         './resources/**/*.js',
         './resources/**/*.vue',
     ],
+    safelist: [
+        'grid-cols-1',
+        'md:grid-cols-2',
+        'md:flex',
+        'sm:grid-cols-2',
+        'sm:flex',
+    ],
     theme: {
         extend: {
             fontFamily: {
