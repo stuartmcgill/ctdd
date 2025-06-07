@@ -26,4 +26,8 @@ class Church extends Model
         'title',
     ];
 
+    public function url(): string
+    {
+        return route('frontend.church', ['slug' => $this->slug]);
+    }
 }

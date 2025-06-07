@@ -16,8 +16,8 @@
 <x-menu/>
 <div class="mx-auto max-2xl prose">
     <h1>{{ $item->title }}</h1>
-    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-        <div class="flex flex-col">
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
+        <div class="flex flex-col text-sm">
             <div>{{ $item->location }}</div>
             <div><a href="mailto:{{ $item->email }}">{{ $item->email }}</a></div>
             <div><a href="{{ $item->url }}">Website</a></div>

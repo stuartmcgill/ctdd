@@ -15,4 +15,11 @@ class ChurchDisplayController extends Controller
 
         return view('site.church', ['item' => $church]);
     }
+
+    public function list(ChurchRepository $churchRepository): View
+    {
+        $churches = $churchRepository->where('published', 1)->get();
+
+        return view('site.churches', ['churches' => $churches]);
+    }
 }
