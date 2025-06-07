@@ -17,5 +17,4 @@ class MenuLink extends Model implements Sortable
         'title',
         'position',
     ];
-
 }
