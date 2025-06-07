@@ -1,20 +1,16 @@
-@php
-    $media = $item->medias('cover')->first();
-    $imageAlt = $media?->alt_text ?? $item->title;
+@extends('site.layouts.app')
 
-    $desktopUrl = $item->image('cover');
-    $mobileUrl = $item->image('cover', 'mobile');
-@endphp
+@section('title', $item->title)
 
-<!doctype html>
-<html lang="en">
-<head>
-    <title>{{ $item->title }}</title>
-    @vite('resources/css/app.css')
-</head>
-<body>
-<x-menu/>
-<div class="mx-auto max-2xl prose">
+@section('content')
+    @php
+        $media = $item->medias('cover')->first();
+        $imageAlt = $media?->alt_text ?? $item->title;
+
+        $desktopUrl = $item->image('cover');
+        $mobileUrl = $item->image('cover', 'mobile');
+    @endphp
+
     <h1>{{ $item->title }}</h1>
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-center">
         <div class="flex flex-col text-sm">
@@ -34,6 +30,4 @@
 
     <div>{!! $item->description !!}</div>
     <div class="mt-12">{!! $item->map_link !!}</div>
-</div>
-</body>
-</html>
+@endsection

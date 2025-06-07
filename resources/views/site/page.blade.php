@@ -1,13 +1,7 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <title>{{ $item->title }}</title>
-    @vite('resources/css/app.css')
-</head>
-<body>
-<x-menu/>
-<div class="mx-auto max-w-2xl">
+@extends('site.layouts.app')
+
+@section('title', $item->title)
+
+@section('content')
     {!! $item->renderBlocks() !!}
-</div>
-</body>
-</html>
+@endsection
