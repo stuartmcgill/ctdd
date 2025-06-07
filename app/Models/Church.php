@@ -8,7 +8,7 @@ use A17\Twill\Models\Behaviors\HasRevisions;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use A17\Twill\Models\Model;
 
-class Church extends Model 
+class Church extends Model
 {
     use HasSlug, HasMedias, HasRevisions, HasFactory;
 
@@ -16,10 +16,14 @@ class Church extends Model
         'published',
         'title',
         'description',
+        'location',
+        'map_link',
+        'email',
+        'url',
     ];
-    
+
     public $slugAttributes = [
         'title',
     ];
-    
+
 }

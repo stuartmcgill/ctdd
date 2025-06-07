@@ -20,6 +20,18 @@ class ChurchController extends BaseModuleController
     protected function setUpController(): void
     {
     }
+    
+    protected function getIndexTableColumns(): TableColumns
+    {
+        $table = parent::getIndexTableColumns();
+
+        $after = $table->splice(2);
+        $table->add(
+            Text::make()->field('location')->sortable()
+        );
+
+        return $table->merge($after);
+    }
 
     /**
      * See the table builder docs for more information. If you remove this method you can use the blade files.
