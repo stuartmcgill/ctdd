@@ -20,7 +20,7 @@ class ChurchController extends BaseModuleController
     protected function setUpController(): void
     {
     }
-    
+
     protected function getIndexTableColumns(): TableColumns
     {
         $table = parent::getIndexTableColumns();
