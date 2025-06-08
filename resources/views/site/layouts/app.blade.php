@@ -9,7 +9,7 @@
 </head>
 <body>
 <x-menu/>
-<div class="mx-auto max-w-2xl scope">
+<div class="mx-auto max-w-2xl prose">
 {{--    TODO remove--}}
     <div id="app-button">
         <app-button label="Hello" />
