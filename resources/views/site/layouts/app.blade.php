@@ -7,7 +7,12 @@
 </head>
 <body>
 <x-menu/>
-<div id="app" class="mx-auto max-2xl prose">
+<div class="mx-auto max-w-2xl scope">
+{{--    TODO remove--}}
+    <div id="app-button">
+        <app-button label="Hello" />
+    </div>
+
     @yield('content')
 </div>
 </body>
