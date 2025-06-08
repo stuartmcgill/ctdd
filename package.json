@@ -14,5 +14,11 @@
         "postcss": "^8.4.47",
         "tailwindcss": "^3.4.13",
         "vite": "^6.0.11"
+    },
+    "dependencies": {
+        "@primeuix/themes": "^1.1.1",
+        "@vitejs/plugin-vue": "^5.2.4",
+        "primevue": "^4.3.5",
+        "vue": "^3.5.16"
     }
 }
