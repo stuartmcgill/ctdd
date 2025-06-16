@@ -3,3 +3,21 @@
 @tailwind utilities;
 
 @import 'flowbite';
+
+.app-content {
+  h2 {
+    @apply text-red-800
+  }
+
+  blockquote {
+    @apply text-red-600
+  }
+
+  a {
+    @apply text-red-700
+  }
+
+  li::marker {
+    @apply text-red-700
+  }
+}
