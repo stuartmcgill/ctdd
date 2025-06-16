@@ -5,16 +5,12 @@
 @import 'flowbite';
 
 .app-content {
-  h1, h2 {
+  h1, h2, h3 {
     @apply text-red-800
   }
 
   blockquote {
     @apply text-red-600
-  }
-
-  a {
-    @apply text-red-700
   }
 
   li::marker {
