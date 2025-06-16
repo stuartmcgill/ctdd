@@ -1,7 +1,8 @@
 <nav class="">
-    <div class="mx-auto p-8 max-w-screen-xl flex flex-wrap items-center justify-between">
-        <a href="/">
-            <span class="self-center text-2xl font-semibold">Churches Together in Didcot and District</span>
+    <div class="mx-auto p-8 max-w-screen-xl flex flex-wrap items-center justify-between text-white bg-red-600">
+        <a href="/" class="flex flex-col gap-2 self-center">
+            <span class="text-4xl font-semibold">Churches Together</span>
+            <span class="uppercase text-2xl">in Didcot and District</span>
         </a>
         <button data-collapse-toggle="navbar-default" type="button"
                 class="text-white bg-red-600 inline-flex items-center p-2 w-10 h-10 justify-center text-sm
@@ -13,12 +14,12 @@
             </svg>
         </button>
         <div class="hidden w-full md:block md:w-auto" id="navbar-default">
-            <ul class="bg-red-600 font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:border-0 md:bg-gray-50">
+            <ul class="bg-red-600 font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:rounded-none md:flex-row md:mt-0 md:border-0">
                 @foreach ($links as $link)
                     <li>
                         <a href="{{route('frontend.page', [$link->getRelated('page')->first()->slug])}}"
-                        class="block py-2 px-3 text-white rounded hover:text-red-700 hover:bg-gray-100 md:hover:bg-transparent
-                      md:hover:text-blue-700 md:p-0">
+                        class="block py-2 px-3 text-white rounded md:rounded-none hover:text-red-700 hover:bg-gray-100 md:hover:bg-transparent
+                      md:hover:text-red-100 md:p-3 md:px-2">
                             {{ $link->title }}
                         </a>
                     </li>
