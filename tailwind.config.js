@@ -8,6 +8,7 @@ export default {
     './resources/**/*.blade.php',
     './resources/**/*.js',
     './resources/**/*.vue',
+    './node_modules/flowbite/**/*.js',
   ],
   safelist: [
     'grid-cols-1',
@@ -38,5 +39,5 @@ export default {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [require('@tailwindcss/typography'), require('flowbite/plugin')],
 }

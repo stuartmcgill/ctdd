@@ -8,13 +8,8 @@
     @vite('resources/js/app.js')
 </head>
 <body>
-<x-menu/>
+<x-navbar />
 <div class="mx-auto max-w-2xl prose">
-{{--    TODO remove--}}
-    <div id="app-button">
-        <app-button label="Hello" />
-    </div>
-
     @yield('content')
 </div>
 </body>

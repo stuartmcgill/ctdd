@@ -4,6 +4,7 @@ import PrimeVue from 'primevue/config'
 import { definePreset } from '@primeuix/themes'
 import Aura from '@primeuix/themes/aura'
 import AppButton from './components/AppButton.vue'
+import 'flowbite'
 
 const el = document.getElementById('app-button')
 if (el) {
