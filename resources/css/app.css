@@ -5,7 +5,7 @@
 @import 'flowbite';
 
 .app-content {
-  h2 {
+  h1, h2 {
     @apply text-red-800
   }
 

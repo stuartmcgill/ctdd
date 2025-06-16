@@ -1,0 +1,20 @@
+<footer class="text-white bg-red-600">
+  <div class="w-full mx-auto max-w-screen-xl p-4 sm:p-8 flex items-center justify-between">
+    <ul class="flex flex-wrap items-center mt-3 text-sm sm:mt-0">
+      <li>
+        <a href="#" class="hover:underline me-4 md:me-6">About</a>
+      </li>
+      <li>
+        <a href="#" class="hover:underline">Contact</a>
+      </li>
+    </ul>
+    <span id="copyright" class="text-sm sm:text-center" />
+  </div>
+</footer>
+
+@section('scripts')
+  <script>
+    const el = document.getElementById('copyright')
+    el.textContent = `© ${new Date().getFullYear()}`
+  </script>
+@endsection
