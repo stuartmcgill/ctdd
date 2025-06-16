@@ -9,7 +9,7 @@
 </head>
 <body>
 <x-navbar />
-<div class="mx-auto max-w-2xl prose">
+<div class="mx-auto max-w-2xl px-8 md:px-0 prose">
     @yield('content')
 </div>
 </body>
