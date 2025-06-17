@@ -16,10 +16,12 @@
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-[1fr,2fr] gap-4">
-    <div class="flex gap-4 justify-center sm:justify-start">
-      <div
-        class="px-4 py-2 w-fit text-xl font-semibold  text-red-700 bg-red-50 rounded-lg">{{ $item->location }}</div>
+    <div
+      class="w-fit h-fit justify-center sm:justify-start px-4 py-2 text-xl font-semibold  text-red-700 bg-red-50 rounded-lg"
+    >
+      {{ $item->location }}
     </div>
+
     <div class="w-full flex flex-col gap-2 items-center sm:items-start">
       <div class="flex items-center flex-wrap gap-3 group">
         <x-icon-envelope class="w-5 h-5 text-red-700 group-hover:text-red-500"/>
