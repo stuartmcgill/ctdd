@@ -5,15 +5,53 @@
 @import 'flowbite';
 
 .app-content {
-  h1, h2, h3 {
+  @apply text-base leading-relaxed text-gray-800;
+
+  h1, h2, h3, h4, h5 {
     @apply text-red-800
   }
 
-  blockquote {
-    @apply text-red-600
+  h1 {
+    @apply text-3xl font-bold mt-8 mb-4;
+  }
+
+  h2 {
+    @apply text-2xl font-semibold mt-6 mb-3;
+  }
+
+  h3 {
+    @apply text-xl font-semibold mt-4 mb-2;
+  }
+
+  p {
+    @apply mb-4;
+  }
+
+  a {
+    @apply text-red-700 underline hover:text-red-500;
+  }
+
+  ul {
+    @apply list-disc pl-6 mb-4;
+  }
+
+  ol {
+    @apply list-decimal pl-6 mb-4;
+  }
+
+  li {
+    @apply mb-1;
   }
 
   li::marker {
     @apply text-red-700
+  }
+
+  blockquote {
+    @apply border-l-4 border-red-100 pl-4 italic text-red-600 my-4;
+  }
+
+  img {
+    @apply my-4 rounded;
   }
 }
