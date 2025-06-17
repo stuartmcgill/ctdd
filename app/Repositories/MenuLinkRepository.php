@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Repositories;
 
 use A17\Twill\Repositories\Behaviors\HandleNesting;

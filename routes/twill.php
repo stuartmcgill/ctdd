@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use A17\Twill\Facades\TwillRoutes;
 
 // Register Twill routes here eg.

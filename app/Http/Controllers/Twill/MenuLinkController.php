@@ -1,20 +1,25 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Twill;
 
+use A17\Twill\Http\Controllers\Admin\NestedModuleController as BaseModuleController;
 use A17\Twill\Models\Contracts\TwillModelContract;
 use A17\Twill\Services\Forms\Fields\Browser;
+use A17\Twill\Services\Forms\Form;
 use A17\Twill\Services\Listings\Columns\Text;
 use A17\Twill\Services\Listings\TableColumns;
-use A17\Twill\Services\Forms\Form;
-use A17\Twill\Http\Controllers\Admin\NestedModuleController as BaseModuleController;
 use App\Models\Page;
 
 class MenuLinkController extends BaseModuleController
 {
     protected $moduleName = 'menuLinks';
+
     protected $showOnlyParentItemsInBrowsers = true;
+
     protected $nestedItemsDepth = 1;
+
     /**
      * This method can be used to enable/disable defaults. See setUpController in the docs for available options.
      */

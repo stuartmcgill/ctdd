@@ -1,12 +1,13 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers;
 
 use A17\Twill\Facades\TwillAppSettings;
 use App\Models\Page;
 use App\Repositories\PageRepository;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
 
 class PageDisplayController extends Controller
 {

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Providers;
 
 use Illuminate\Support\Facades\View;
@@ -35,7 +37,7 @@ class ViewServiceProvider extends ServiceProvider
                             'icon' => 'pi pi-fw pi-lock',
                             'url' => '/security',
                         ],
-                    ]
+                    ],
                 ],
             ]);
         });

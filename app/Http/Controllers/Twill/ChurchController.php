@@ -1,25 +1,26 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Http\Controllers\Twill;
 
+use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 use A17\Twill\Models\Contracts\TwillModelContract;
+use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Fields\Medias;
 use A17\Twill\Services\Forms\Fields\Wysiwyg;
+use A17\Twill\Services\Forms\Form;
 use A17\Twill\Services\Listings\Columns\Text;
 use A17\Twill\Services\Listings\TableColumns;
-use A17\Twill\Services\Forms\Fields\Input;
-use A17\Twill\Services\Forms\Form;
-use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 
 class ChurchController extends BaseModuleController
 {
     protected $moduleName = 'churches';
+
     /**
      * This method can be used to enable/disable defaults. See setUpController in the docs for available options.
      */
-    protected function setUpController(): void
-    {
-    }
+    protected function setUpController(): void {}
 
     protected function getIndexTableColumns(): TableColumns
     {
@@ -76,18 +77,18 @@ class ChurchController extends BaseModuleController
             Wysiwyg::make()
                 ->name('description')
                 ->toolbarOptions([
-                        [ 'header' => [2, 3, false]],
-                        'bold',
-                        'italic',
-                        'underline',
-                        'blockquote',
-                        'ordered',
-                        'bullet',
-                        'hr',
-                        'link',
-                        'clean',
-                        'align',
-                    ]
+                    ['header' => [2, 3, false]],
+                    'bold',
+                    'italic',
+                    'underline',
+                    'blockquote',
+                    'ordered',
+                    'bullet',
+                    'hr',
+                    'link',
+                    'clean',
+                    'align',
+                ]
                 )
                 ->maxLength(5000)
                 ->options(['height' => 4600])

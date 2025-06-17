@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 return [
     'block_editor' => [
         'use_twill_blocks' => [],

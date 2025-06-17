@@ -1,9 +1,10 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\View\Components;
 
 use App\Models\MenuLink;
-use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 

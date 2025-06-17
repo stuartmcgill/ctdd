@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 use App\Http\Controllers\ChurchDisplayController;
 use App\Http\Controllers\PageDisplayController;
 use Illuminate\Support\Facades\Route;
