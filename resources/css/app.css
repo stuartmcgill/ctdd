@@ -51,3 +51,9 @@
     @apply border-l-4 border-red-100 pl-4 italic text-red-600 my-4;
   }
 }
+
+.app-wysiwyg {
+  a {
+    @apply underline
+  }
+}
