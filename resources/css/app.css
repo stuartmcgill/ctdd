@@ -28,7 +28,7 @@
   }
 
   a {
-    @apply text-red-700 underline hover:text-red-500;
+    @apply text-red-700 hover:text-red-500;
   }
 
   ul {
@@ -49,9 +49,5 @@
 
   blockquote {
     @apply border-l-4 border-red-100 pl-4 italic text-red-600 my-4;
-  }
-
-  img {
-    @apply my-4 rounded;
   }
 }
