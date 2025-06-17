@@ -11,25 +11,38 @@
     $mobileUrl = $item->image('cover', 'mobile');
   @endphp
 
-  <h1>{{ $item->title }}{{ $item->location !== 'Didcot' ? ", $item->location" : ''}}</h1>
-  <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-    <div class="flex flex-col text-sm">
+  <div class="flex justify-between">
+    <h1>{{ $item->title }}</h1>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-[1fr,2fr] gap-4">
+    <div class="flex flex-col gap-4 text-sm">
       <div class="px-4 py-2 w-fit text-xl font-semibold  text-red-700 bg-red-50 rounded-lg">{{ $item->location }}</div>
-      <div><a href="mailto:{{ $item->email }}">{{ $item->email }}</a></div>
+    </div>
+    <div class="w-full flex flex-col gap-2">
+      <div class="flex items-center flex-wrap gap-3 group">
+        <x-icon-envelope class="w-5 h-5 text-red-700 group-hover:text-red-500"/>
+        <a href="mailto:{{ $item->email }}" class=" group-hover:text-red-500">{{ $item->email }}</a>
+      </div>
+
       @if($item->url)
-        <div><a href="{{ $item->url }}">{{ $item->url }}</a></div>
+        <div class="flex items-center flex-wrap gap-3 group">
+          <x-icon-globe class="w-5 h-5 text-red-700 group-hover:text-red-500"/>
+          <a href="{{ $item->url }}" class=" group-hover:text-red-500">{{ $item->url }}</a>
+        </div>
       @endif
     </div>
-    @if ($media)
-      <picture>
-        <source srcset="{{ $mobileUrl }}" media="(max-width: 639px)">
-        <source srcset="{{ $desktopUrl }}" media="(min-width: 640px) and (max-width: 1023px)">
-        <source srcset="{{ $desktopUrl }}" media="(min-width: 1024px)">
-        <img src="{{ $desktopUrl }}" alt="{{ $imageAlt }}" style="width:100%; height:auto;"
-             class="max-w-sm bg-white border border-red-100 shadow-sm">
-      </picture>
-    @endif
   </div>
+
+  @if ($media)
+    <picture>
+      <source srcset="{{ $mobileUrl }}" media="(max-width: 639px)">
+      <source srcset="{{ $desktopUrl }}" media="(min-width: 640px) and (max-width: 1023px)">
+      <source srcset="{{ $desktopUrl }}" media="(min-width: 1024px)">
+      <img src="{{ $desktopUrl }}" alt="{{ $imageAlt }}" style="width:100%; height:auto;"
+           class="mt-8 w-full bg-white border border-red-100 shadow-sm">
+    </picture>
+  @endif
 
   <div class=" mt-8">{!! $item->description !!}</div>
   <h2 class="mt-16">Map</h2>
