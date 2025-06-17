@@ -17,7 +17,7 @@
 
   <div class="grid grid-cols-1 sm:grid-cols-[1fr,2fr] gap-4">
     <div
-      class="w-fit h-fit justify-center sm:justify-start px-4 py-2 text-xl font-semibold  text-red-700 bg-red-50 rounded-lg"
+      class="mx-auto sm:mx-0 w-fit h-fit justify-center sm:justify-start px-4 py-2 text-xl font-semibold  text-red-700 bg-red-50 rounded-lg"
     >
       {{ $item->location }}
     </div>
@@ -49,5 +49,7 @@
 
   <div class=" mt-8">{!! $item->description !!}</div>
   <h2 class="mt-16">Map</h2>
-  {{--  <div>{!! $item->map_link !!}</div>--}}
+  <div class="iframe-wrapper">
+    {!! $item->map_link !!}
+  </div>
 @endsection
