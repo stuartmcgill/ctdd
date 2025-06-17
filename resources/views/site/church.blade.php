@@ -11,15 +11,16 @@
     $mobileUrl = $item->image('cover', 'mobile');
   @endphp
 
-  <div class="flex justify-between">
+  <div class="text-center sm:text-start">
     <h1>{{ $item->title }}</h1>
   </div>
 
   <div class="grid grid-cols-1 sm:grid-cols-[1fr,2fr] gap-4">
-    <div class="flex flex-col gap-4 text-sm">
-      <div class="px-4 py-2 w-fit text-xl font-semibold  text-red-700 bg-red-50 rounded-lg">{{ $item->location }}</div>
+    <div class="flex gap-4 justify-center sm:justify-start">
+      <div
+        class="px-4 py-2 w-fit text-xl font-semibold  text-red-700 bg-red-50 rounded-lg">{{ $item->location }}</div>
     </div>
-    <div class="w-full flex flex-col gap-2">
+    <div class="w-full flex flex-col gap-2 items-center sm:items-start">
       <div class="flex items-center flex-wrap gap-3 group">
         <x-icon-envelope class="w-5 h-5 text-red-700 group-hover:text-red-500"/>
         <a href="mailto:{{ $item->email }}" class=" group-hover:text-red-500">{{ $item->email }}</a>
@@ -28,7 +29,7 @@
       @if($item->url)
         <div class="flex items-center flex-wrap gap-3 group">
           <x-icon-globe class="w-5 h-5 text-red-700 group-hover:text-red-500"/>
-          <a href="{{ $item->url }}" class=" group-hover:text-red-500">{{ $item->url }}</a>
+          <a href="{{ $item->url }}" class="break-all group-hover:text-red-500">Website</a>
         </div>
       @endif
     </div>
@@ -46,5 +47,5 @@
 
   <div class=" mt-8">{!! $item->description !!}</div>
   <h2 class="mt-16">Map</h2>
-  <div>{!! $item->map_link !!}</div>
+  {{--  <div>{!! $item->map_link !!}</div>--}}
 @endsection
