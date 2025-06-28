@@ -2,7 +2,7 @@
   <div class="p-4 sm:p-8 flex items-center justify-between gap-4">
     <ul class="flex flex-wrap items-center mt-3 text-sm sm:mt-0">
       <li>
-        <a href="/about" class="hover:underline me-4 md:me-6">About</a>
+        <a href="/about-ctdd" class="hover:underline me-4 md:me-6">About</a>
       </li>
       <li>
         <a href="/contact" class="hover:underline">Contact</a>

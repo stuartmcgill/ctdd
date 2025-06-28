@@ -90,7 +90,7 @@ class ChurchController extends BaseModuleController
                     'align',
                 ]
                 )
-                ->maxLength(5000)
+                ->maxLength('5000')
                 ->options(['height' => 4600])
         );
 
