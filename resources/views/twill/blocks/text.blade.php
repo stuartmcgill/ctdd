@@ -3,16 +3,16 @@
 @twillBlockGroup('app')
 
 <x-twill::input
-    name="title"
-    label="Title"
-    :translated="true"
+  name="title"
+  label="Title"
+  :translated="true"
 />
 
 <x-twill::wysiwyg
-    name="text"
-    label="Text"
-    placeholder="Text"
-    :toolbar-options="[
+  name="text"
+  label="Text"
+  placeholder="Text"
+  :toolbar-options="[
         'bold',
         'italic',
         ['list' => 'bullet'],
@@ -23,5 +23,5 @@
         'clean',
         'blockquote',
     ]"
-    :translated="true"
+  :translated="true"
 />

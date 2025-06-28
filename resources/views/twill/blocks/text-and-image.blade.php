@@ -2,6 +2,13 @@
 @twillBlockIcon('text')
 @twillBlockGroup('app')
 
+@twillBlockValidationRules([
+'title' => 'required',
+'flip_order' => 'required',
+'text' => 'required',
+'highlight' => 'required',
+])
+
 <x-twill::input
   name="title"
   label="Title"
@@ -37,4 +44,13 @@
 <x-twill::medias
   name="highlight"
   label="Image"
+/>
+
+<x-twill::wysiwyg
+  name="caption"
+  label="Image caption"
+  :toolbar-options="[
+        'link',
+        'clean'
+    ]"
 />

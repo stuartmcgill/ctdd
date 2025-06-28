@@ -1,6 +1,7 @@
 @twillBlockTitle('Video link')
 @twillBlockIcon('video')
 @twillBlockGroup('app')
+
 @twillBlockValidationRules([
 'name' => 'required',
 'embeddedText' => 'required',

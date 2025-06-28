@@ -1,6 +1,7 @@
 @php
   $textOrder = $block->input('flip_order') == 1 ? 'md:order-2' : 'md:order-1';
   $imageOrder = $block->input('flip_order') == 1 ? 'md:order-1' : 'md:order-2';
+  $caption = $block->input('caption') ?? null;
 @endphp
 
 <div class="my-4 md:my-8 overflow-clip relative"
@@ -22,8 +23,11 @@
             $imageOrder,
             'md:flex', 'md:flex-col', 'md:justify-center',
         ])>
-        <div class="py-8 mx-auto max-w-2xl flex items-center">
+        <div class="py-8 mx-auto max-w-2xl flex flex-col items-center gap-2">
           <img src="{{ $block->image('highlight', 'desktop') }}"/>
+          @if(isset($caption))
+            <div class="text-sm text-gray-500">{!! $block->input('caption') !!}</div>
+          @endif
         </div>
       </div>
     </div>
