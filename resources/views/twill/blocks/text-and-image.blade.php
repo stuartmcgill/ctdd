@@ -29,6 +29,7 @@
   label="Text"
   placeholder="Text"
   :toolbar-options="[
+        ['header' => [2, 3, 4, true]],
         'bold',
         'italic',
         ['list' => 'bullet'],
