@@ -7,7 +7,7 @@
   @vite('resources/css/app.css')
   @vite('resources/js/app.js')
 </head>
-<body class="min-h-screen flex flex-col">
+<body class="min-h-screen flex flex-col overflow-y-scroll">
 <x-navbar/>
 <div class="mx-auto max-w-2xl my-4 sm:my-8 md:my-12 px-2 sm:px-4 md:px-8 prose app-content">
   @yield('content')
