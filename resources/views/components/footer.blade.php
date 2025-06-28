@@ -12,9 +12,9 @@
   </div>
 </footer>
 
-@section('scripts')
+@push('scripts')
   <script>
     const el = document.getElementById('copyright')
     el.textContent = `© ${new Date().getFullYear()} Churches Together in Didcot and District`
   </script>
-@endsection
+@endpush

@@ -43,7 +43,7 @@
 </nav>
 
 {{--Hide the header when the hamburger menu is open--}}
-@section('scripts')
+@push('scripts')
   <script>
     document.addEventListener('DOMContentLoaded', function () {
       const hamburgerMenu = document.querySelector('[data-collapse-toggle="navbar-default"]');
@@ -63,4 +63,4 @@
     });
 
   </script>
-@endsection
+@endpush
