@@ -45,4 +45,33 @@ return [
             ],
         ],
     ],
+    'dashboard' => [
+        'modules' => [
+            'App\Models\Church' => [ // module name if you added a morph map entry for it, otherwise FQN of the model (eg. App\Models\Project)
+                'name' => 'churches', // module name
+                'count' => true, // show total count with link to index of this module
+                'create' => true, // show link in create new dropdown
+                'activity' => true, // show activities on this module in activities list
+                'draft' => true, // show drafts of this module for current user
+                'search' => true, // show results for this module in global search
+            ],
+            'App\Models\Page' => [ // module name if you added a morph map entry for it, otherwise FQN of the model (eg. App\Models\Project)
+                'name' => 'pages', // module name
+                'count' => true, // show total count with link to index of this module
+                'create' => true, // show link in create new dropdown
+                'activity' => true, // show activities on this module in activities list
+                'draft' => true, // show drafts of this module for current user
+                'search' => true, // show results for this module in global search
+            ],
+            'App\Models\Article' => [ // module name if you added a morph map entry for it, otherwise FQN of the model (eg. App\Models\Project)
+                'name' => 'articles', // module name
+                'label' => 'News items',
+                'count' => true, // show total count with link to index of this module
+                'create' => true, // show link in create new dropdown
+                'activity' => true, // show activities on this module in activities list
+                'draft' => true, // show drafts of this module for current user
+                'search' => true, // show results for this module in global search
+            ],
+        ],
+    ],
 ];
