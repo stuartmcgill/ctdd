@@ -1,4 +1,4 @@
-<nav class="">
+<nav>
   <div class="mx-auto p-8 max-w-screen-xl flex flex-wrap gap-8 items-center justify-between text-white bg-red-600">
     <a href="/" class="order-0 text-white block w-[80px]">
       <img
@@ -8,7 +8,9 @@
         height="30"
       >
     </a>
-    <a href="/" class="order-2 md:order-3 flex flex-col gap-2 self-center w-full sm:w-auto text-center sm:text-left">
+    <a href="/"
+       id="heading"
+       class="order-2 md:order-3 flex flex-col gap-2 self-center w-full sm:w-auto text-center sm:text-left">
       <span class="text-2xl sm:text-4xl font-semibold">Churches Together</span>
       <span class="uppercase text-lg sm:text-2xl text-gray-100">in Didcot and District</span>
     </a>
@@ -39,3 +41,26 @@
     </div>
   </div>
 </nav>
+
+{{--Hide the header when the hamburger menu is open--}}
+@section('scripts')
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const hamburgerMenu = document.querySelector('[data-collapse-toggle="navbar-default"]');
+      const menu = document.getElementById('navbar-default');
+      const heading = document.getElementById('heading');
+
+      hamburgerMenu.addEventListener('click', () => {
+        const isMenuOpen = !menu.classList.contains('hidden');
+        // The `remove` and `add` are this way round because this script runs _before_ the menu has been
+        // updated.
+        if (isMenuOpen) {
+          heading.classList.remove('hidden');
+        } else {
+          heading.classList.add('hidden');
+        }
+      });
+    });
+
+  </script>
+@endsection
