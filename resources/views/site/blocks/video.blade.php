@@ -1,3 +1,3 @@
-<div class="video-wrapper">
+<div class="iframe-wrapper">
   {!! $block->input('embeddedText') !!}
 </div>
