@@ -12,3 +12,4 @@ TwillRoutes::module('menuLinks');
 TwillRoutes::module('churches');
 
 TwillRoutes::module('articles');
+TwillRoutes::module('menuItems');

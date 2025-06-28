@@ -33,8 +33,13 @@ class AppServiceProvider extends ServiceProvider
             NavigationLink::make()->forModule('pages')
         );
 
+        // SJM delete
         TwillNavigation::addLink(
-            NavigationLink::make()->forModule('menuLinks')->title('Menu')
+            NavigationLink::make()->forModule('menuLinks')
+        );
+
+        TwillNavigation::addLink(
+            NavigationLink::make()->forModule('menuItems')->title('Menu')
         );
 
         TwillNavigation::addLink(

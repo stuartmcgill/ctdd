@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\View\Components;
 
-use App\Models\MenuLink;
+use App\Models\MenuItem;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
@@ -23,8 +23,8 @@ class Menu extends Component
      */
     public function render(): View
     {
-        /** @var MenuLink[] $links */
-        $links = MenuLink::published()->get()->toTree();
+        /** @var MenuItem[] $links */
+        $links = MenuItem::published()->orderBy('position')->get();
 
         return view('components.menu', ['links' => $links]);
     }

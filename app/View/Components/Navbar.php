@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\View\Components;
 
-use App\Models\MenuLink;
+use App\Models\MenuItem;
 use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -24,8 +24,8 @@ class Navbar extends Component
      */
     public function render(): View|Closure|string
     {
-        /** @var MenuLink[] $links */
-        $links = MenuLink::published()->get()->toTree();
+        /** @var MenuItem[] $links */
+        $links = MenuItem::published()->orderBy('position')->get();
 
         return view('components.navbar', ['links' => $links]);
     }
