@@ -16,6 +16,8 @@ export default {
     'md:flex',
     'sm:grid-cols-2',
     'sm:flex',
+    'md:order-1',
+    'md:order-2',
   ],
   theme: {
     extend: {
