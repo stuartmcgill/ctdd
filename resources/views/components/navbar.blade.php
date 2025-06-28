@@ -1,12 +1,13 @@
 <nav>
-  <div class="mx-auto p-8 max-w-screen-xl flex flex-wrap gap-8 items-center justify-between text-white bg-red-600">
+  <div
+    class="mx-auto p-4 sm:p-6 md:p-8 max-w-screen-xl flex flex-wrap gap-2 sm:gap-8 items-center justify-between text-white bg-red-600">
     <a href="/" class="order-0 text-white w-[80px] h-[80px] flex items-center justify-center">
       <img
         src="{{ asset('assets/images/ctdd-logo.png') }}"
         alt="CTDD Logo"
         width="80"
         height="80"
-        class="block"
+        class="flex"
       >
     </a>
     <a href="/"
