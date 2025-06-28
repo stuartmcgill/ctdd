@@ -16,4 +16,14 @@ class ArticleDisplayController extends Controller
 
         return view('site.article', ['item' => $article]);
     }
+
+    public function list(ArticleRepository $articleRepository): View
+    {
+        $articles = $articleRepository
+            ->where('published', 1)
+            ->orderBy('position')
+            ->get();
+
+        return view('site.articles', ['articles' => $articles]);
+    }
 }

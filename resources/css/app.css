@@ -27,7 +27,7 @@
     @apply mb-4;
   }
 
-  a {
+  a:not(.app-card) {
     @apply text-red-700 hover:text-red-500;
   }
 
