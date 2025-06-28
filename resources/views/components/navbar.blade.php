@@ -1,9 +1,11 @@
 <nav class="">
   <div class="mx-auto p-8 max-w-screen-xl flex flex-wrap gap-8 items-center justify-between text-white bg-red-600">
-    <a href="/" class="order-0 text-white">
+    <a href="/" class="order-0 text-white block w-[80px]">
       <img
         src="{{ asset('assets/images/ctdd-logo.png') }}"
         alt="CTDD Logo"
+        width="80"
+        height="30"
       >
     </a>
     <a href="/" class="order-2 md:order-3 flex flex-col gap-2 self-center w-full sm:w-auto text-center sm:text-left">
