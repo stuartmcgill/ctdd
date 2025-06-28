@@ -31,10 +31,16 @@
       <ul
         class="bg-red-100 md:bg-red-600 font-medium flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg md:rounded-none md:flex-row md:mt-0 md:border-0">
         @foreach ($links as $link)
+          @php
+            $page = $link->getRelated('page')->first();
+            $url = $page ? route('frontend.page', [$page->slug]) : '#';
+            $isActive = str_contains(request()->url(), $url);
+          @endphp
           <li>
             <a href="{{route('frontend.page', [$link->getRelated('page')->first()->slug])}}"
                class="block py-2 px-3 text-red-600 md:text-white rounded md:rounded-none hover:text-red-700 underline-offset-8 hover:underline hover:bg-gray-100 md:hover:bg-transparent
-                      md:hover:text-red-100 md:p-3 md:px-2">
+                      md:hover:text-red-100 md:p-3 md:px-2
+                      {{ $isActive ? 'font-bold underline' : '' }}">
               {{ $link->title }}
             </a>
           </li>
