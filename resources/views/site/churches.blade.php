@@ -14,10 +14,12 @@
       <x-church-card :church="$church"/>
     @endforeach
   </div>
-  <div id="church-near-you" class="app-section mt-16 flex flex-col">
+  <div id="church-near-you" class="app-section flex flex-col">
     <h1>Find a church near you</h1>
     <div>This map shows the location of all the members of Churches Together in Didcot and District.</div>
-    <div class="mt-4">{!! $allChurchesMapEmbedCode !!}</div>
+    <div class="mt-4 iframe-wrapper">
+      <div>{!! $allChurchesMapEmbedCode !!}</div>
+    </div>
   </div>
 @endsection
 

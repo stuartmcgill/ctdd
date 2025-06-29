@@ -90,3 +90,7 @@ html {
 .app-card-heading {
   @apply text-2xl font-bold tracking-tight text-gray-900;
 }
+
+.app-section {
+  @apply mt-12 sm:mt-16 lg:mt-20;
+}
