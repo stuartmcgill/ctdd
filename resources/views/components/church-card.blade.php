@@ -7,7 +7,7 @@
 @endphp
 
 <a href="{{ $church->url() }}"
-   class="max-w-sm bg-white border border-red-100 rounded-lg shadow-sm hover:bg-red-50 hover:border-red-200">
+   class="app-card">
   @if ($media)
     <picture>
       <source srcset="{{ $mobileUrl }}" media="(max-width: 639px)">

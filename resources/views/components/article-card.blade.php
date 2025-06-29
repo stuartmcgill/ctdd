@@ -7,7 +7,7 @@
 @endphp
 
 <a href="{{ $article->url() }}"
-   class="app-card max-w-sm bg-white border border-red-100 rounded-lg shadow-sm hover:bg-red-50 hover:border-red-200">
+   class="app-card">
   @if ($media)
     <picture>
       <source srcset="{{ $mobileUrl }}" media="(max-width: 639px)">
@@ -22,7 +22,7 @@
     <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{ $article->description }}</p>
     <div class="flex items-center justify-between">
       <button
-        class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-700 rounded-lg hover:bg-red-600 focus:ring-4 focus:outline-none focus:ring-blue-300">
+        class="app-button">
         More
         <svg class="rtl:rotate-180 w-3.5 h-3.5 ms-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none"
              viewBox="0 0 14 10">

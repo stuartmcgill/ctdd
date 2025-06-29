@@ -102,18 +102,4 @@ class ChurchController extends BaseModuleController
 
         return $form;
     }
-
-    /**
-     * This is an example and can be removed if no modifications are needed to the table.
-     */
-    protected function additionalIndexTableColumns(): TableColumns
-    {
-        $table = parent::additionalIndexTableColumns();
-
-        $table->add(
-            Text::make()->field('description')->title('Description')
-        );
-
-        return $table;
-    }
 }

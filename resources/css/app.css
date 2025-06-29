@@ -74,3 +74,11 @@
   height: 100% !important;
   border: 0;
 }
+
+.app-button {
+  @apply inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-red-600 rounded-lg hover:bg-red-500 focus:ring-4 focus:outline-none focus:ring-red-300;
+}
+
+.app-card {
+  @apply max-w-sm bg-white border border-red-100 rounded-lg shadow-sm hover:bg-red-50 hover:border-red-200;
+}

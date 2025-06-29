@@ -19,7 +19,7 @@ class ChurchDisplayController extends Controller
 
     public function list(ChurchRepository $churchRepository): View
     {
-        $churches = $churchRepository->where('published', 1)->get();
+        $churches = $churchRepository->where('published', 1)->orderBy('title')->get();
 
         return view('site.churches', ['churches' => $churches]);
     }
