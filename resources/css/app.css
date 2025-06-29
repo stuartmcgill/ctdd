@@ -82,3 +82,7 @@
 .app-card {
   @apply max-w-sm bg-white border border-red-100 rounded-lg shadow-sm hover:bg-red-50 hover:border-red-200;
 }
+
+.app-card-heading {
+  @apply text-2xl font-bold tracking-tight text-gray-900;
+}
