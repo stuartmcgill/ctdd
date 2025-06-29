@@ -29,10 +29,13 @@
       </div>
 
       @if($item->url)
-        <div class="flex items-center flex-wrap gap-3 group">
+        <a href="{{ $item->url }}" class=" flex items-center flex-wrap gap-3 group">
           <x-icon-globe class="w-5 h-5 text-red-700 group-hover:text-red-500"/>
-          <a href="{{ $item->url }}" class="break-all group-hover:text-red-500">Website</a>
-        </div>
+          <button type="button"
+                  class="px-5 py-2.5 me-2 mb-2 text-white bg-red-600 hover:bg-red-500 rounded-lg text-sm focus:outline-none">
+            Visit website
+          </button>
+        </a>
       @endif
     </div>
   </div>
