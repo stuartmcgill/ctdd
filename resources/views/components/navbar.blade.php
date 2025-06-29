@@ -38,7 +38,7 @@
           @endphp
           <li>
             <a href="{{route('frontend.page', [$link->getRelated('page')->first()->slug])}}"
-               class="block py-2 px-3 text-red-600 md:text-white rounded md:rounded-none hover:text-red-700 underline-offset-8 hover:underline hover:bg-gray-100 md:hover:bg-transparent
+               class="block py-2 px-3 text-red-600 md:text-white rounded md:rounded-none hover:text-red-700 md:underline-offset-8 hover:bg-gray-100 md:hover:bg-transparent
                       md:hover:text-red-100 md:p-3 md:px-2
                       {{ $isActive ? 'font-bold underline' : '' }}">
               {{ $link->title }}
