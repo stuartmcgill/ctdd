@@ -4,6 +4,10 @@
 
 @import 'flowbite';
 
+html {
+  @apply scroll-smooth;
+}
+
 .app-content {
   @apply text-base leading-relaxed text-gray-800;
 
