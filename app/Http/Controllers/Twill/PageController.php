@@ -34,7 +34,7 @@ class PageController extends BaseModuleController
         $form = parent::getForm($model);
 
         $form->add(
-            Input::make()->name('description')->label('Description')
+            Input::make()->name('description')->label('Page heading text')
         );
 
         $form->add(
