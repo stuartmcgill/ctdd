@@ -32,7 +32,7 @@ html {
   }
 
   a:not(.app-card) {
-    @apply text-red-700 hover:text-red-500;
+    @apply text-red-700 hover:text-red-500 underline;
   }
 
   ul {
