@@ -45,6 +45,7 @@ class ChurchController extends BaseModuleController
         $form->add(
             Input::make()
                 ->name('location')
+                ->required()
                 ->maxLength('50')
         );
 
@@ -67,6 +68,17 @@ class ChurchController extends BaseModuleController
         $form->add(
             Input::make()
                 ->name('address')
+                ->required()
+                ->label('Church address')
+                ->type('text')
+                ->maxLength('500')
+                ->note('For Sunday services')
+        );
+
+        $form->add(
+            Input::make()
+                ->name('office_address')
+                ->label('Office address')
                 ->type('text')
                 ->maxLength('500')
         );
