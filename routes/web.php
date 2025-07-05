@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Route;
 // @TODO - remove this middleware
 Route::group([
     'middleware' => function ($request, $next) {
-        if (! Auth::guard('twill_users')->check()) {
+        if (! app()->environment('local') && ! Auth::guard('twill_users')->check()) {
             abort(403, 'Frontend temporarily restricted to administrators.');
         }
 
