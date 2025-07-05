@@ -52,7 +52,10 @@
 
   <div class=" mt-8">{!! $item->description !!}</div>
   <h2 class="mt-16">Location</h2>
-  <div class="iframe-wrapper">
+  <div>
+    {{ $item->address }}
+  </div>
+  <div class="mt-6 iframe-wrapper">
     {!! $item->map_link !!}
   </div>
 @endsection

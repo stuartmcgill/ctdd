@@ -50,15 +50,6 @@ class ChurchController extends BaseModuleController
 
         $form->add(
             Input::make()
-                ->name('map_link')
-                ->label('Map embed code')
-                ->type('textarea')
-                ->maxLength('2000')
-                ->note('Generate from Google Maps via Share > Embed a map')
-        );
-
-        $form->add(
-            Input::make()
                 ->name('email')
                 ->label('Email contact')
                 ->type('email')
@@ -71,6 +62,13 @@ class ChurchController extends BaseModuleController
                 ->label('Church website')
                 ->type('url')
                 ->maxLength('2000')
+        );
+
+        $form->add(
+            Input::make()
+                ->name('address')
+                ->type('text')
+                ->maxLength('500')
         );
 
         $form->add(
@@ -92,6 +90,15 @@ class ChurchController extends BaseModuleController
                 )
                 ->maxLength('5000')
                 ->options(['height' => 4600])
+        );
+
+        $form->add(
+            Input::make()
+                ->name('map_link')
+                ->label('Map embed code')
+                ->type('textarea')
+                ->maxLength('2000')
+                ->note('Generate from Google Maps via Share > Embed a map')
         );
 
         $form->add(
