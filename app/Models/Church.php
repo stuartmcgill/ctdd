@@ -20,6 +20,7 @@ class Church extends Model
         'description',
         'location',
         'address',
+        'office_address',
         'map_link',
         'email',
         'url',
