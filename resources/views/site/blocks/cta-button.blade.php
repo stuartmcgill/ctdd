@@ -1,10 +1,10 @@
 @php
+  $label = $block->input('button_text');
+
   $page = $block->getRelated('page')->firstWhere('published', true);
   $url = isset($page) ? route('frontend.page', $page->slug) : '#';
 @endphp
 
 <div>
-  <a href="{{ $url }}">
-    <button class="app-button">{{ $block->input('button_text') }}</button>
-  </a>
+  <x-app-button :label="$label" :url="$url"/>
 </div>

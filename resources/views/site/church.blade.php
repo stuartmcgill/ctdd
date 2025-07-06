@@ -56,4 +56,9 @@
   <div class="iframe-wrapper">
     {!! $item->map_link !!}
   </div>
+  @if($item->osm_link)
+    <div class="mt-8">
+      <x-app-link :href="$item->osm_link">View in OpenStreetMap</x-app-link>
+    </div>
+  @endif
 @endsection
