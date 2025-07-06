@@ -22,6 +22,7 @@ class Church extends Model
         'address',
         'office_address',
         'map_link',
+        'osm_link',
         'email',
         'url',
     ];

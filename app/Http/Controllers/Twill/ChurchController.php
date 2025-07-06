@@ -114,6 +114,15 @@ class ChurchController extends BaseModuleController
         );
 
         $form->add(
+            Input::make()
+                ->name('osm_link')
+                ->label('Open Street Map link')
+                ->type('textarea')
+                ->maxLength('2000')
+                ->note('e.g. https://www.openstreetmap.org/?mlat=YOUR_LAT&mlon=YOUR_LON')
+        );
+
+        $form->add(
             Medias::make()
                 ->name('cover')
                 ->label('Cover image')
