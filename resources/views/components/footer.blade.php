@@ -10,6 +10,9 @@
       <li>
         <a href="/churches" class="hover:underline">Churches</a>
       </li>
+      <li>
+        <a href="/privacy" class="hover:underline">Privacy policy</a>
+      </li>
     </ul>
     <span id="copyright" class="text-sm sm:text-center"/>
   </div>
