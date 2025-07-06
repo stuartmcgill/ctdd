@@ -118,7 +118,7 @@ class ChurchController extends BaseModuleController
                 ->name('osm_link')
                 ->label('Open Street Map link')
                 ->type('textarea')
-                ->maxLength('2000')
+                ->maxLength('500')
                 ->note('e.g. https://www.openstreetmap.org/?mlat=YOUR_LAT&mlon=YOUR_LON')
         );
 

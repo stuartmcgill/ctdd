@@ -13,10 +13,7 @@ class AppButton extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public readonly string $label, public readonly string $url)
-    {
-        //
-    }
+    public function __construct(public readonly string $label, public readonly string $url) {}
 
     /**
      * Get the view / contents that represent the component.
