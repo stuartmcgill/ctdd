@@ -52,21 +52,13 @@
 
   <div class=" mt-8">{!! $item->description !!}</div>
   <h2 class="mt-16">Location</h2>
-  <div class="mb-6">
-    @if($item->office_address)
-      <div class="grid grid-cols-1 md:grid-cols-[1fr,2fr] gap-x-4 gap-y-2">
-        <div class="mt-4 md:mt-0 font-semibold">Sunday services</div>
-        {{ $item->address }}
-        <div class="mt-4 md:mt-0 font-semibold">Office</div>
-        {{ $item->office_address }}
-      </div>
-    @else
-      <div>
-        {{ $item->address }}
-      </div>
-    @endif
-  </div>
+  <x-church-address :address="$item->address" :officeAddress="$item->office_address" class="mb-6"/>
   <div class="iframe-wrapper">
     {!! $item->map_link !!}
   </div>
+  @if($item->osm_link)
+    <div class="mt-8">
+      <x-app-link :href="$item->osm_link">View in OpenStreetMap</x-app-link>
+    </div>
+  @endif
 @endsection
