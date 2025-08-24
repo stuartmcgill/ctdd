@@ -53,12 +53,12 @@
   <div class=" mt-8">{!! $item->description !!}</div>
   <h2 class="mt-16">Location</h2>
   <x-church-address :address="$item->address" :officeAddress="$item->office_address" class="mb-6"/>
-  <div class="iframe-wrapper">
-    {!! $item->map_link !!}
-  </div>
   @if($item->osm_link)
-    <div class="mt-8">
+    <div class="my-4">
       <x-app-link :href="$item->osm_link">View in OpenStreetMap</x-app-link>
     </div>
   @endif
+  <div class="iframe-wrapper">
+    {!! $item->map_link !!}
+  </div>
 @endsection
