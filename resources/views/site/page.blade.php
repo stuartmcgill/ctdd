@@ -3,10 +3,10 @@
 @section('title', $item->title)
 
 @section('content')
-  <div class="app-condensed">
+  <x-section>
     <h1>{{ $item->description }}</h1>
     <div class="app-wysiwyg">
       {!! $item->renderBlocks() !!}
     </div>
-  </div>
+  </x-section>
 @endsection

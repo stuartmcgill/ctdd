@@ -91,10 +91,6 @@ html {
   @apply text-2xl font-bold tracking-tight text-gray-900;
 }
 
-.app-condensed {
-  @apply mx-auto max-w-2xl px-2 sm:px-4 md:px-8
-}
-
 .app-section {
-  @apply px-2 sm:px-4 md:px-8 py-12 sm:py-16 lg:py-20;
+  @apply px-2 sm:px-4 md:px-8 py-4 sm:py-8 lg:py-12;
 }

@@ -21,13 +21,13 @@
     </div>
   </x-section>
 
-  <x-highlighted-section>
-    @foreach($groups as $group)
-      <div id="groups" class="pb-12 sm:pb-16 lg:pb-20">
+  @foreach($groups as $group)
+    <x-highlighted-section class="flex flex-col gap-12 sm:gap-16 lg:gap-20">
+      <div id="groups">
         <x-group :group="$group"/>
       </div>
-    @endforeach
-  </x-highlighted-section>
+    </x-highlighted-section>
+  @endforeach
 
   <x-section id="church-near-you" class="flex flex-col">
     <h1>Find a church near you</h1>

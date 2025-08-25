@@ -1,9 +1,9 @@
 @extends('site.layouts.app')
 
-{{--@section('title', $item->title)--}}
+@section('title', $item->title)
 
 @section('content')
-  <div class="app-wysiwyg">
+  <x-section class="app-wysiwyg">
     {!! $item->renderBlocks() !!}
-  </div>
+  </x-section>
 @endsection
