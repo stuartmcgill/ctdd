@@ -25,18 +25,13 @@ class ChurchDisplayController extends Controller
         $churches = $churchRepository->where('published', 1)->orderBy('title')->get();
 
         $groups = $this->fetchGroups();
-        $groupTitles = $groups->pluck('title');
-
-        $combinedGroupText = $groupTitles->count() <= 2
-            ? $groupTitles->join(' and ')
-            : $groupTitles->slice(0, -1)->join(', ').', and '.$groupTitles->last();
 
         return view(
             'site.churches',
             [
                 'churches' => $churches,
                 'groups' => $groups,
-                'combinedGroupText' => $combinedGroupText,
+                'combinedGroupText' => $this->buildCombinedGroupsText($groups),
                 'allChurchesMapEmbedCode' => TwillAppSettings::get('churches.maps.url'),
             ],
         );
@@ -56,5 +51,21 @@ class ChurchDisplayController extends Controller
             })
             ->orderBy('title')
             ->get();
+    }
+
+    /**
+     * @return Collection<Group>
+     */
+    private function buildCombinedGroupsText(Collection $groups): string
+    {
+        if ($groups->isEmpty()) {
+            return '';
+        }
+
+        $groupTitles = $groups->pluck('title');
+
+        return $groupTitles->count() <= 2
+            ? $groupTitles->join(' and ')
+            : $groupTitles->slice(0, -1)->join(', ').', and '.$groupTitles->last();
     }
 }
