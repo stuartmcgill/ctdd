@@ -22,15 +22,25 @@ class ChurchDisplayController extends Controller
 
     public function list(ChurchRepository $churchRepository): View
     {
-        $churches = $churchRepository->where('published', 1)->orderBy('title')->get();
+        $mainChurches = $churchRepository
+            ->where('published', 1)
+            ->whereNull('group_id')
+            ->orderBy('title')
+            ->get();
 
         $groups = $this->fetchGroups();
+
+        $total = $mainChurches->count() + $groups->reduce(
+            fn (int $carry, Group $group) => $carry + $group->churches->count(),
+            0,
+        );
 
         return view(
             'site.churches',
             [
-                'churches' => $churches,
+                'churches' => $mainChurches,
                 'groups' => $groups,
+                'total' => $total,
                 'combinedGroupText' => $this->buildCombinedGroupsText($groups),
                 'allChurchesMapEmbedCode' => TwillAppSettings::get('churches.maps.url'),
             ],

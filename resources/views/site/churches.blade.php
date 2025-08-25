@@ -6,7 +6,7 @@
   <x-section>
     <div class="flex flex-col">
       <h1>Churches</h1>
-      <div>There are {{ $churches->count() }} members of Churches Together in Didcot and District.
+      <div>There are {{ $total }} members of Churches Together in Didcot and District.
         You can find out more about each church below, or find a church
         <x-app-link href="#church-near-you">near
           you.
