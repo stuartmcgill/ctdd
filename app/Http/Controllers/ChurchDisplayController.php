@@ -24,11 +24,19 @@ class ChurchDisplayController extends Controller
     {
         $churches = $churchRepository->where('published', 1)->orderBy('title')->get();
 
+        $groups = $this->fetchGroups();
+        $groupTitles = $groups->pluck('title');
+
+        $combinedGroupText = $groupTitles->count() <= 2
+            ? $groupTitles->join(' and ')
+            : $groupTitles->slice(0, -1)->join(', ').', and '.$groupTitles->last();
+
         return view(
             'site.churches',
             [
                 'churches' => $churches,
-                'groups' => $this->fetchGroups(),
+                'groups' => $groups,
+                'combinedGroupText' => $combinedGroupText,
                 'allChurchesMapEmbedCode' => TwillAppSettings::get('churches.maps.url'),
             ],
         );

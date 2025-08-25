@@ -11,6 +11,7 @@
         you.
       </x-app-link>
     </div>
+    <div class="mt-4">(See <a href="#groups">below</a> for the {{ $combinedGroupText }}).</div>
   </div>
   <div class="app-section lg:-mx-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
     @foreach($churches as $church)
@@ -18,7 +19,7 @@
     @endforeach
   </div>
   @foreach($groups as $group)
-    <div class="app-section">
+    <div id="groups" class="app-section">
       <x-group :group="$group"/>
     </div>
   @endforeach
