@@ -3,14 +3,6 @@
 @section('title', $item->title)
 
 @section('content')
-  @php
-    $media = $item->medias('cover')->first();
-    $imageAlt = $media?->alt_text ?? $item->title;
-
-    $desktopUrl = $item->image('cover');
-    $mobileUrl = $item->image('cover', 'mobile');
-  @endphp
-
   <x-section>
     <div class="text-center sm:text-start">
       <h1>{{ $item->title }}</h1>
@@ -43,12 +35,12 @@
       </div>
     </div>
 
-    @if ($media)
+    @if ($image)
       <picture>
-        <source srcset="{{ $mobileUrl }}" media="(max-width: 639px)">
-        <source srcset="{{ $desktopUrl }}" media="(min-width: 640px) and (max-width: 1023px)">
-        <source srcset="{{ $desktopUrl }}" media="(min-width: 1024px)">
-        <img src="{{ $desktopUrl }}" alt="{{ $imageAlt }}" style="width:100%; height:auto;"
+        <source srcset="{{ $image->mobileUrl }}" media="(max-width: 639px)">
+        <source srcset="{{ $image->desktopUrl }}" media="(min-width: 640px) and (max-width: 1023px)">
+        <source srcset="{{ $image->desktopUrl }}" media="(min-width: 1024px)">
+        <img src="{{ $image->desktopUrl }}" alt="{{ $image->alt }}" style="width:100%; height:auto;"
              class="mt-8 w-full bg-white border border-red-100 shadow-sm">
       </picture>
     @endif

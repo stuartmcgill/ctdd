@@ -141,6 +141,13 @@ class ChurchController extends BaseModuleController
                 ->label('Cover image')
         );
 
+        $form->add(
+            Medias::make()
+                ->name('church_image')
+                ->label('Church image')
+                ->note('If provided, used on the church page instead of the cover image')
+        );
+
         return $form;
     }
 }
