@@ -17,6 +17,17 @@
       <x-church-card :church="$church"/>
     @endforeach
   </div>
+  @foreach($groups as $group)
+    <div class="app-section">
+      <h1>{{ $group->title }}</h1>
+      <div class="mb-8">{!! $group->description !!}</div>
+      <div class="lg:-mx-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        @foreach($group->churches as $church)
+          <x-church-card :church="$church"/>
+        @endforeach
+      </div>
+    </div>
+  @endforeach
   <div id="church-near-you" class="app-section flex flex-col">
     <h1>Find a church near you</h1>
     <div>This map shows the location of all the members of Churches Together in Didcot and District.</div>

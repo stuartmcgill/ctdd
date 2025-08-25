@@ -6,12 +6,15 @@ namespace App\Http\Controllers\Twill;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 use A17\Twill\Models\Contracts\TwillModelContract;
+use A17\Twill\Services\Forms\Fields\Browser;
 use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Fields\Medias;
+use A17\Twill\Services\Forms\Fields\Select;
 use A17\Twill\Services\Forms\Fields\Wysiwyg;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Services\Listings\Columns\Text;
 use A17\Twill\Services\Listings\TableColumns;
+use App\Models\Group;
 
 class ChurchController extends BaseModuleController
 {
@@ -47,6 +50,18 @@ class ChurchController extends BaseModuleController
                 ->name('location')
                 ->required()
                 ->maxLength('50')
+        );
+
+        // $form->add(Browser::make()->name('group')->label('Church group')->modules([Group::class]));
+        $form->add(
+            Select::make()
+                ->name('group_id')
+                ->label('Church group')
+                ->options(
+                    Group::orderBy('title')
+                        ->pluck('title', 'id')
+                        ->toArray()
+                )
         );
 
         $form->add(

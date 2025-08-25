@@ -5,8 +5,10 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use A17\Twill\Facades\TwillAppSettings;
+use App\Models\Group;
 use App\Repositories\ChurchRepository;
 use Illuminate\Contracts\View\View;
+use Illuminate\Support\Collection;
 
 class ChurchDisplayController extends Controller
 {
@@ -20,15 +22,31 @@ class ChurchDisplayController extends Controller
 
     public function list(ChurchRepository $churchRepository): View
     {
-        $allChurchesMapEmbedCode = TwillAppSettings::get('churches.maps.url');
         $churches = $churchRepository->where('published', 1)->orderBy('title')->get();
 
         return view(
             'site.churches',
             [
                 'churches' => $churches,
-                'allChurchesMapEmbedCode' => $allChurchesMapEmbedCode,
+                'groups' => $this->fetchGroups(),
+                'allChurchesMapEmbedCode' => TwillAppSettings::get('churches.maps.url'),
             ],
         );
+    }
+
+    /**
+     * @return Collection<Group>
+     */
+    private function fetchGroups(): Collection
+    {
+        return Group::with(['churches' => function ($query) {
+            $query->where('published', 1)->orderBy('title');
+        }])
+            ->where('published', 1)
+            ->whereHas('churches', function ($query) {
+                $query->where('published', 1);
+            })
+            ->orderBy('title')
+            ->get();
     }
 }
