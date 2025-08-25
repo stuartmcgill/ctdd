@@ -12,7 +12,9 @@
           you.
         </x-app-link>
       </div>
-      <div class="mt-4">(See <a href="#groups">below</a> for the {{ $combinedGroupText }}).</div>
+      @if($groups->isNotEmpty())
+        <div class="mt-4">(See <a href="#groups">below</a> for the {{ $combinedGroupText }}).</div>
+      @endif
     </div>
     <div class="mt-6 sm:mt-8 lg:mt-12 lg:-mx-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       @foreach($churches as $church)
