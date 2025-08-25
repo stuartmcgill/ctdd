@@ -16,6 +16,7 @@ class ChurchDisplayController extends Controller
 {
     public function show(string $slug, ChurchRepository $churchRepository): View
     {
+        /** @var Church $church */
         $church = $churchRepository->forSlug($slug);
         abort_if(is_null($church), 404);
 
@@ -103,6 +104,5 @@ class ChurchDisplayController extends Controller
             desktopUrl: $church->image($imageKey),
             mobileUrl: $church->image($imageKey, 'mobile'),
         );
-
     }
 }
