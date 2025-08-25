@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\Http\Controllers;
 
 use A17\Twill\Facades\TwillAppSettings;
+use App\Models\Church;
 use App\Models\Group;
 use App\Repositories\ChurchRepository;
 use Illuminate\Contracts\View\View;
@@ -17,18 +18,11 @@ class ChurchDisplayController extends Controller
         $church = $churchRepository->forSlug($slug);
         abort_if(is_null($church), 404);
 
-        $media = $church->medias()->first();
-        $image = [
-            'alt' => $media?->alt_text ?? $church->title,
-            'desktopUrl' => $church->image('cover'),
-            'mobileUrl' => $church->image('cover', 'mobile'),
-        ];
-
         return view(
             'site.church',
             [
                 'item' => $church,
-                'image' => $media ? $image : null,
+                'image' => $this->getImage($church),
             ],
         );
     }
@@ -90,5 +84,23 @@ class ChurchDisplayController extends Controller
         return $groupTitles->count() <= 2
             ? $groupTitles->join(' and ')
             : $groupTitles->slice(0, -1)->join(', ').', and '.$groupTitles->last();
+    }
+
+    private function getImage(Church $church): ?array
+    {
+        $hasCoverImage = $church->hasImage('cover');
+        $hasChurchImage = $church->hasImage('church_image');
+
+        if (! $hasCoverImage && ! $hasChurchImage) {
+            return null;
+        }
+
+        $imageKey = $hasChurchImage ? 'church_image' : 'cover';
+
+        return [
+            'alt' => $church->imageAltText($imageKey) ?? $church->title,
+            'desktopUrl' => $church->image($imageKey),
+            'mobileUrl' => $church->image($imageKey, 'mobile'),
+        ];
     }
 }

@@ -42,4 +42,31 @@ class Church extends Model
     {
         return route('frontend.church', ['slug' => $this->slug]);
     }
+
+    public $mediasParams = [
+        'cover' => [
+            'default' => [
+                [
+                    'name' => 'desktop',
+                    'ratio' => 16 / 9,
+                ],
+                [
+                    'name' => 'mobile',
+                    'ratio' => 1,
+                ],
+            ],
+        ],
+        'church_image' => [
+            'default' => [
+                [
+                    'name' => 'desktop',
+                    'ratio' => 16 / 9,
+                ],
+                [
+                    'name' => 'mobile',
+                    'ratio' => 1,
+                ],
+            ],
+        ],
+    ];
 }
