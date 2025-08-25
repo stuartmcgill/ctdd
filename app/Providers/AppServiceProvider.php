@@ -30,6 +30,10 @@ class AppServiceProvider extends ServiceProvider
         );
 
         TwillNavigation::addLink(
+            NavigationLink::make()->forModule('groups')->title('Church groups')
+        );
+
+        TwillNavigation::addLink(
             NavigationLink::make()->forModule('articles')
         );
 

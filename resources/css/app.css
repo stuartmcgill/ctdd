@@ -92,5 +92,5 @@ html {
 }
 
 .app-section {
-  @apply mt-12 sm:mt-16 lg:mt-20;
+  @apply px-2 sm:px-4 md:px-8 py-4 sm:py-8 lg:py-12;
 }

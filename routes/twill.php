@@ -9,3 +9,4 @@ TwillRoutes::module('pages');
 TwillRoutes::module('churches');
 TwillRoutes::module('articles');
 TwillRoutes::module('menuItems');
+TwillRoutes::module('groups');
