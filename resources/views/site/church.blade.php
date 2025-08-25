@@ -37,10 +37,10 @@
 
     @if ($image)
       <picture>
-        <source srcset="{{ $image['mobileUrl'] }}" media="(max-width: 639px)">
-        <source srcset="{{ $image['desktopUrl'] }}" media="(min-width: 640px) and (max-width: 1023px)">
-        <source srcset="{{ $image['desktopUrl'] }}" media="(min-width: 1024px)">
-        <img src="{{ $image['desktopUrl'] }}" alt="{{ $image['alt'] }}" style="width:100%; height:auto;"
+        <source srcset="{{ $image->mobileUrl }}" media="(max-width: 639px)">
+        <source srcset="{{ $image->desktopUrl }}" media="(min-width: 640px) and (max-width: 1023px)">
+        <source srcset="{{ $image->desktopUrl }}" media="(min-width: 1024px)">
+        <img src="{{ $image->desktopUrl }}" alt="{{ $image->alt }}" style="width:100%; height:auto;"
              class="mt-8 w-full bg-white border border-red-100 shadow-sm">
       </picture>
     @endif

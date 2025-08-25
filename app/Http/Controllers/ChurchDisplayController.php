@@ -8,6 +8,7 @@ use A17\Twill\Facades\TwillAppSettings;
 use App\Models\Church;
 use App\Models\Group;
 use App\Repositories\ChurchRepository;
+use App\ViewModels\ChurchImageVm;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 
@@ -86,7 +87,7 @@ class ChurchDisplayController extends Controller
             : $groupTitles->slice(0, -1)->join(', ').', and '.$groupTitles->last();
     }
 
-    private function getImage(Church $church): ?array
+    private function getImage(Church $church): ?ChurchImageVm
     {
         $hasCoverImage = $church->hasImage('cover');
         $hasChurchImage = $church->hasImage('church_image');
@@ -97,10 +98,11 @@ class ChurchDisplayController extends Controller
 
         $imageKey = $hasChurchImage ? 'church_image' : 'cover';
 
-        return [
-            'alt' => $church->imageAltText($imageKey) ?? $church->title,
-            'desktopUrl' => $church->image($imageKey),
-            'mobileUrl' => $church->image($imageKey, 'mobile'),
-        ];
+        return new ChurchImageVm(
+            alt: $church->imageAltText($imageKey) ?? $church->title,
+            desktopUrl: $church->image($imageKey),
+            mobileUrl: $church->image($imageKey, 'mobile'),
+        );
+
     }
 }
