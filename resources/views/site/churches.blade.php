@@ -3,7 +3,7 @@
 @section('title', 'CTDD church list')
 
 @section('content')
-  <div class="app-condensed">
+  <x-section>
     <div class="flex flex-col">
       <h1>Churches</h1>
       <div>There are {{ $churches->count() }} members of Churches Together in Didcot and District.
@@ -14,27 +14,27 @@
       </div>
       <div class="mt-4">(See <a href="#groups">below</a> for the {{ $combinedGroupText }}).</div>
     </div>
-    <div class="app-section lg:-mx-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    <div class="mt-6 sm:mt-8 lg:mt-12 lg:-mx-32 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       @foreach($churches as $church)
         <x-church-card :church="$church"/>
       @endforeach
     </div>
-  </div>
+  </x-section>
 
   <x-highlighted-section>
     @foreach($groups as $group)
-      <div id="groups" class="app-section">
+      <div id="groups" class="pb-12 sm:pb-16 lg:pb-20">
         <x-group :group="$group"/>
       </div>
     @endforeach
   </x-highlighted-section>
 
-  <div id="church-near-you" class="app-condensed app-section flex flex-col">
+  <x-section id="church-near-you" class="flex flex-col">
     <h1>Find a church near you</h1>
     <div>This map shows the location of all the members of Churches Together in Didcot and District.</div>
     <div class="mt-4 iframe-wrapper">
       <div>{!! $allChurchesMapEmbedCode !!}</div>
     </div>
-  </div>
+  </x-section>
 @endsection
 

@@ -13,7 +13,7 @@
 </head>
 <body class="min-h-screen flex flex-col overflow-x-hidden overflow-y-scroll scroll-smooth">
 <x-navbar/>
-<div class="my-4 sm:my-8 md:my-12 prose app-content">
+<div class="prose app-content">
   @yield('content')
 </div>
 <x-footer/>
