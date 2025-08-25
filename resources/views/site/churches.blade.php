@@ -22,11 +22,11 @@
   </x-section>
 
   @foreach($groups as $group)
-    <x-highlighted-section class="flex flex-col gap-12 sm:gap-16 lg:gap-20">
+    <x-section :highlighted="$loop->index % 2 === 0" class="flex flex-col gap-12 sm:gap-16 lg:gap-20">
       <div id="groups">
         <x-group :group="$group"/>
       </div>
-    </x-highlighted-section>
+    </x-section>
   @endforeach
 
   <x-section id="church-near-you" class="flex flex-col">
