@@ -17,7 +17,20 @@ class ChurchDisplayController extends Controller
         $church = $churchRepository->forSlug($slug);
         abort_if(is_null($church), 404);
 
-        return view('site.church', ['item' => $church]);
+        $media = $church->medias()->first();
+        $image = [
+            'alt' => $media?->alt_text ?? $church->title,
+            'desktopUrl' => $church->image('cover'),
+            'mobileUrl' => $church->image('cover', 'mobile'),
+        ];
+
+        return view(
+            'site.church',
+            [
+                'item' => $church,
+                'image' => $media ? $image : null,
+            ],
+        );
     }
 
     public function list(ChurchRepository $churchRepository): View
