@@ -31,8 +31,8 @@
     </x-section>
   @endforeach
 
-  <x-section id="church-near-you" class="flex flex-col">
-    <h1>Find a church near you</h1>
+  <x-section class="flex flex-col">
+    <h1 id="church-near-you">Find a church near you</h1>
     <div>This map shows the location of all the members of Churches Together in Didcot and District.</div>
     <div class="mt-4 iframe-wrapper">
       <div>{!! $allChurchesMapEmbedCode !!}</div>
