@@ -1,4 +1,4 @@
-<a href="{{ $church->url() }}"
+<a href="{{ $church->buildUrl() }}"
    class="app-card flex flex-col h-full">
   <x-twill-image :item="$church"/>
   <div class="pt-0 p-4 h-full flex flex-col">

@@ -38,7 +38,7 @@ class Church extends Model
         return $this->belongsTo(Group::class);
     }
 
-    public function url(): string
+    public function buildUrl(): string
     {
         return route('frontend.church', ['slug' => $this->slug]);
     }

@@ -35,7 +35,7 @@
       </div>
     </div>
 
-    @if ($image)
+    @if (!empty($image))
       <picture>
         <source srcset="{{ $image->mobileUrl }}" media="(max-width: 639px)">
         <source srcset="{{ $image->desktopUrl }}" media="(min-width: 640px) and (max-width: 1023px)">
