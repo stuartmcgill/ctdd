@@ -16,15 +16,19 @@ html {
   }
 
   h1 {
-    @apply text-3xl font-bold mt-10 mb-6;
+    @apply text-4xl font-bold mt-10 mb-6;
   }
 
   h2 {
-    @apply text-2xl font-semibold mt-8 mb-4;
+    @apply text-3xl font-semibold mt-8 mb-4;
   }
 
   h3 {
-    @apply text-xl font-semibold mt-4 mb-2;
+    @apply text-2xl font-semibold mt-4 mb-2;
+  }
+
+  h4 {
+    @apply text-xl font-semibold mt-2 mb-1;
   }
 
   p {
