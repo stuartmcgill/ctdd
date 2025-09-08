@@ -11,7 +11,7 @@
     <div class="flex flex-col">
       <a href="{{ $primary->url() }}" class="grid grid-cols-1 sm:grid-cols-[67%_33%] gap-4 app-card">
         <x-twill-image :item="$primary" class="rounded-t-lg rounded-b-none sm:rounded-l-lg sm:rounded-r-none"/>
-        <div class="p-4 text-xl fon t-semibold">{{ $primary->description }}</div>
+        <div class="p-4 text-xl font-semibold">{{ $primary->description }}</div>
       </a>
     </div>
     @if($others->isNotEmpty())

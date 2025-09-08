@@ -35,6 +35,10 @@ html {
     @apply text-red-700 hover:text-red-500 underline;
   }
 
+  a:is(.app-card) {
+    @apply no-underline;
+  }
+
   ul {
     @apply list-disc pl-6 mb-4;
   }
