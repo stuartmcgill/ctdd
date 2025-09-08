@@ -1,5 +1,5 @@
 <a href="{{ $article->url() }}"
-   class="app-card">
+   class="max-w-sm app-card">
   <x-twill-image :item="$article" class="rounded-b-none rounded-t-lg"/>
   <div class="pt-0 p-4">
     <h2 class="mb-2 app-card-heading">{{ $article->title }}</h2>
