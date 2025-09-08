@@ -9,10 +9,10 @@
 @if($primary)
   <div class="mb-8 sm:mb-12 lg:mb-16">
     <div class="flex flex-col">
-      <div class="grid grid-cols-1 sm:grid-cols-[67%_33%] gap-4 app-card">
+      <a href="{{ $primary->url() }}" class="grid grid-cols-1 sm:grid-cols-[67%_33%] gap-4 app-card">
         <x-twill-image :item="$primary" class="rounded-t-lg rounded-b-none sm:rounded-l-lg sm:rounded-r-none"/>
-        <div class="p-4 text-xl font-semibold">{{ $primary->description }}</div>
-      </div>
+        <div class="p-4 text-xl fon t-semibold">{{ $primary->description }}</div>
+      </a>
     </div>
     @if($others->isNotEmpty())
       <div class="flex items-center justify-between gap-4">
@@ -22,10 +22,10 @@
 
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
         @foreach($others as $other)
-          <div class="flex flex-col app-card">
+          <a href="{{ $other->url() }}" class="flex flex-col app-card">
             <x-twill-image :item="$other" class="rounded-b-none rounded-t-lg"/>
             <div class="p-4 text-lg font-semibold">{{ $other->description }}</div>
-          </div>
+          </a>
         @endforeach
       </div>
     @endif
