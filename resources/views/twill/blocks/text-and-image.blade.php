@@ -1,5 +1,5 @@
 @twillBlockTitle('Text and image (2 columns)')
-@twillBlockIcon('text')
+@twillBlockIcon('b-text-img')
 @twillBlockGroup('app')
 
 @twillBlockValidationRules([
