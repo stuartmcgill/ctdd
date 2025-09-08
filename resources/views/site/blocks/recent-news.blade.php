@@ -10,10 +10,18 @@
   <div class="flex flex-col">
     <div class="grid grid-cols-1 sm:grid-cols-2">
       <x-twill-image :item="$primary"/>
-      <div>{{ $primary->desccription }}</div>
+      <div>{{ $primary->description }}</div>
     </div>
     @if($others->isNotEmpty())
       <h2>Latest news</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2">
+        @foreach($others as $other)
+          <div class="flex flex-col">
+            <x-twill-image :item="$primary"/>
+            <div>{{ $primary->description }}</div>
+          </div>
+        @endforeach
+      </div>
     @endif
   </div>
 @endif
