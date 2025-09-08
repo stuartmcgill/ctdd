@@ -22,6 +22,7 @@ class Article extends Model implements Sortable
         'title',
         'description',
         'position',
+        'featured',
     ];
 
     public $slugAttributes = [
