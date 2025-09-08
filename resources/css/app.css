@@ -16,15 +16,19 @@ html {
   }
 
   h1 {
-    @apply text-3xl font-bold mt-10 mb-6;
+    @apply text-4xl font-bold mt-10 mb-6;
   }
 
   h2 {
-    @apply text-2xl font-semibold mt-8 mb-4;
+    @apply text-3xl font-semibold mt-8 mb-4;
   }
 
   h3 {
-    @apply text-xl font-semibold mt-4 mb-2;
+    @apply text-2xl font-semibold mt-4 mb-2;
+  }
+
+  h4 {
+    @apply text-xl font-semibold mt-2 mb-1;
   }
 
   p {
@@ -33,6 +37,10 @@ html {
 
   a:not(.app-card) {
     @apply text-red-700 hover:text-red-500 underline;
+  }
+
+  a:is(.app-card) {
+    @apply no-underline;
   }
 
   ul {
@@ -84,7 +92,7 @@ html {
 }
 
 .app-card {
-  @apply max-w-sm bg-white border border-red-100 rounded-lg shadow-sm hover:bg-red-50 hover:border-red-200;
+  @apply bg-white border border-red-100 rounded-lg shadow-sm hover:bg-red-50 hover:border-red-200;
 }
 
 .app-card-heading {

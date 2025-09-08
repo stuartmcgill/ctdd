@@ -17,9 +17,9 @@ class PageDisplayController extends Controller
 
         /** @var Page $frontPage */
         $frontPage = TwillAppSettings::get('homepage.homepage.page')->first();
-        if ($frontPage->published) {
-            return view('site.page', ['item' => $frontPage]);
-        }
+        abort_unless($frontPage->published, 404, 'The home page is not published');
+
+        return view('site.page', ['item' => $frontPage]);
     }
 
     public function show(string $slug, PageRepository $pageRepository): View

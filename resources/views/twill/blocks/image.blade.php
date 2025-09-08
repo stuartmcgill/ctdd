@@ -1,5 +1,5 @@
 @twillBlockTitle('Image')
-@twillBlockIcon('text')
+@twillBlockIcon('b-button')
 @twillBlockGroup('app')
 
 @twillBlockValidationRules([

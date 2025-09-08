@@ -10,6 +10,7 @@ use A17\Twill\Services\Forms\Fields\BlockEditor;
 use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Fields\Medias;
 use A17\Twill\Services\Forms\Form;
+use A17\Twill\Services\Listings\Columns\Boolean;
 use A17\Twill\Services\Listings\Columns\Text;
 use A17\Twill\Services\Listings\TableColumns;
 
@@ -20,7 +21,11 @@ class ArticleController extends BaseModuleController
     /**
      * This method can be used to enable/disable defaults. See setUpController in the docs for available options.
      */
-    protected function setUpController(): void {}
+    protected function setUpController(): void
+    {
+        $this->enableFeature();
+        $this->enableReorder();
+    }
 
     /**
      * See the table builder docs for more information. If you remove this method you can use the blade files.
@@ -54,6 +59,10 @@ class ArticleController extends BaseModuleController
 
         $table->add(
             Text::make()->field('description')->title('Description')
+        );
+
+        $table->add(
+            Boolean::make()->field('featured')
         );
 
         return $table;

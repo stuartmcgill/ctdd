@@ -4,7 +4,7 @@
 
 @section('content')
   <x-section>
-    <h1>{{ $item->description }}</h1>
+    <h1 class="uppercase">{{ $item->description }}</h1>
     <div class="app-wysiwyg">
       {!! $item->renderBlocks() !!}
     </div>
