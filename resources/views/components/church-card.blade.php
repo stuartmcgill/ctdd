@@ -1,6 +1,6 @@
 <a href="{{ $church->buildUrl() }}"
    class="app-card flex flex-col h-full">
-  <x-twill-image :item="$church"/>
+  <x-twill-image :item="$church" class="rounded-b-none rounded-t-lg"/>
   <div class="pt-0 p-4 h-full flex flex-col">
     <h2 class="mb-2 app-card-heading">{{ $church->title }}</h2>
     <p class="mb-3 font-normal text-gray-700">{{ $church->location }}</p>

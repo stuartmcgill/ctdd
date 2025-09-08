@@ -20,7 +20,7 @@ class TwillImage extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public readonly Model $item)
+    public function __construct(public readonly Model $item, public readonly ?string $class = '')
     {
         $this->media = $item->medias('cover')->first();
         $this->imageAlt = $media?->alt_text ?? $item->title;
