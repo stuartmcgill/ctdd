@@ -24,6 +24,7 @@ class ArticleController extends BaseModuleController
     protected function setUpController(): void
     {
         $this->enableFeature();
+        $this->enableReorder();
     }
 
     /**

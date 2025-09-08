@@ -28,6 +28,7 @@ class ArticleRepository extends ModuleRepository
     {
         return $this->published()
             ->orderBy('featured', 'desc')
+            ->orderBy('position')
             ->orderBy('created_at', 'desc')
             ->limit($limit)
             ->get();
