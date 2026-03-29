@@ -1,6 +1,7 @@
 @extends('site.layouts.app')
 
-@section('title', 'CTDD church list')
+@section('title', 'Churches')
+@section('description', 'Explore the member churches of Churches Together in Didcot and District — serving Didcot, Harwell, Chilton, the Churn benefice villages, and surrounding areas.')
 
 @section('content')
   <x-section>
