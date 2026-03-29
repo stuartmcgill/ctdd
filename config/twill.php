@@ -81,4 +81,20 @@ return [
             ],
         ],
     ],
+    'settings' => [
+        'crops' => [
+            'default_social_image' => [
+                'default' => [
+                    [
+                        'name' => 'default',
+                        'ratio' => 1.91 / 1,
+                        'minValues' => [
+                            'width' => 1200,
+                            'height' => 627,
+                        ],
+                    ],
+                ],
+            ],
+        ],
+    ],
 ];

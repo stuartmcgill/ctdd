@@ -1,6 +1,7 @@
 @extends('site.layouts.app')
 
-@section('title', 'CTDD news')
+@section('title', 'News')
+@section('description', 'Stay up to date with news and events from Churches Together — services, community events, and Christian life across Didcot and the surrounding villages.')
 
 @section('content')
   <x-section>

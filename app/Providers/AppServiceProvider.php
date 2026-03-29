@@ -17,7 +17,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function register(): void
     {
-        //
+        TwillAppSettings::registerSettingsGroups(
+            SettingsGroup::make()->name('seo')->label('SEO'),
+        );
     }
 
     /**

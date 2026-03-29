@@ -6,9 +6,11 @@ namespace App\Http\Controllers\Twill;
 
 use A17\Twill\Http\Controllers\Admin\ModuleController as BaseModuleController;
 use A17\Twill\Models\Contracts\TwillModelContract;
+use A17\Twill\Services\Forms\BladePartial;
 use A17\Twill\Services\Forms\Fields\BlockEditor;
 use A17\Twill\Services\Forms\Fields\Input;
 use A17\Twill\Services\Forms\Fields\Medias;
+use A17\Twill\Services\Forms\Fieldset;
 use A17\Twill\Services\Forms\Form;
 use A17\Twill\Services\Listings\Columns\Text;
 use A17\Twill\Services\Listings\TableColumns;
@@ -43,6 +45,19 @@ class PageController extends BaseModuleController
 
         $form->add(
             BlockEditor::make()
+        );
+
+        $form->addFieldset(
+            Fieldset::make()
+                ->title('SEO metadata')
+                ->id('metadata')
+                ->fields([
+                    BladePartial::make()->view('twill-metadata::includes.metadata-fields')
+                        ->withAdditionalParams([
+                            'metadata_card_type_options' => config('metadata.card_type_options'),
+                            'metadata_og_type_options' => config('metadata.opengraph_type_options'),
+                        ]),
+                ])
         );
 
         return $form;
