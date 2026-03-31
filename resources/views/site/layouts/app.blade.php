@@ -27,6 +27,26 @@
   <link rel="manifest" href="/site.webmanifest">
   @vite('resources/css/app.css')
   @vite('resources/js/app.js')
+
+  {{-- Default structured data: always present --}}
+  <script type="application/ld+json">
+    @php
+      echo json_encode([
+      '@context' => 'https://schema.org',
+      '@type' => 'Organization',
+      'name' => 'Churches Together in Didcot and District',
+      'alternateName' => 'CTDD',
+      'description' => 'A group of local churches working together to serve our community and share the love of Christ',
+      'url' => 'https://www.ctdd.org.uk',
+      'logo' => 'https://www.ctdd.org.uk/assets/images/structured-data-logo.png',
+      'email' => 'secretary@ctdd.org.uk',
+      'foundingDate' => '1993-01-24',
+    ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+    @endphp
+  </script>
+
+  {{-- Additional page-specific schema pushed from child views --}}
+  @stack('structured_data')
 </head>
 <body class="min-h-screen flex flex-col overflow-x-hidden overflow-y-scroll scroll-smooth">
 <x-navbar/>
