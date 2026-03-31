@@ -14,6 +14,11 @@
       echo json_encode([
         '@context'      => 'https://schema.org',
         '@type'         => 'NewsArticle',
+        '@id'           => url()->current() . '#article',
+        'mainEntityOfPage' => [
+          '@type' => 'WebPage',
+          '@id'   => url()->current(),
+        ],
         'headline'      => $item->title,
         'image'         => $item->image('cover'),
         'datePublished' => $item->created_at->toIso8601String(),
