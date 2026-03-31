@@ -58,3 +58,27 @@
     </div>
   </x-section>
 @endsection
+
+@push('structured_data')
+  <script type="application/ld+json">
+    @php
+      echo json_encode([
+        '@context' => 'https://schema.org',
+        '@type' => 'Church',
+        '@id' => url()->current() . '#church',
+
+        'name' => $item->title . ' (' . $item->location . ')',
+        'url' => url()->current(),
+        'image' => $item->image('cover'),
+        'sameAs' => $item->url ? [$item->url] : [],
+
+        'address' => [
+          '@type' => 'PostalAddress',
+            'streetAddress' => $item->address,
+            'addressLocality' => $item->location,
+            'addressCountry' => 'GB',
+        ],
+      ], JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES);
+    @endphp
+  </script>
+@endpush
