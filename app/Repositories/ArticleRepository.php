@@ -27,7 +27,7 @@ class ArticleRepository extends ModuleRepository
     public function fetchRecent(int $limit): Collection
     {
         return $this->published()
-            ->orderBy('featured', 'desc')
+            ->where('featured', true)
             ->orderBy('position')
             ->orderBy('created_at', 'desc')
             ->limit($limit)
